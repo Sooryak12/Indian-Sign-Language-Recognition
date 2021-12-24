@@ -3,8 +3,7 @@ import skvideo.io
 import cv2 
 import time
 import mediapipe as mp
-import holistic
-from holistic import pose_estimation
+import holistic.pose_estimation as pose_estimation
 
 def video_array_maker(pather,height=224,width=224,output_directory="./Output",output_folder=pather.split("/")[3],remove_input=True):
     """
