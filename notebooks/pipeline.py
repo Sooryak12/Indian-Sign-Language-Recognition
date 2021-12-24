@@ -38,13 +38,17 @@ def pose_estimation(image,results):
 
 
 
-def video_array_maker(pather,height=224,width=224,output_directory="./Output",output_folder=pather.split("/")[3],remove_input=True):
+def video_array_maker(pather,height=224,width=224,output_directory="./Output",output_folder=None,remove_input=True):
   """
     pather : location of video
     height,width (default : 224) 
     output_directory :output main directory  (default : ./Output)
     output folder :output subdirectory
   """
+  if output_folder is None:
+    output_folder=pather.split("/")[3]
+  elif output_folder == "No":
+    output_folder=""  
   videodata = skvideo.io.vread(pather)  
   outpath=os.path.join(output_directory,output_folder,os.path.split(pather)[1])
   out = cv2.VideoWriter(outpath,cv2.VideoWriter_fourcc('M','J','P','G'), 10, (width,height))
