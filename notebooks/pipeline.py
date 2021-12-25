@@ -76,9 +76,10 @@ def video_array_maker(pather,height=224,width=224,output_directory="./Output",ou
     else:
           for i in range(actualframe):
               frame=videodata[i]
-              frame=cv2.resize(frame,(width,height),interpolation=cv2.INTER_AREA)
+              #frame=cv2.resize(frame,(width,height),interpolation=cv2.INTER_AREA)
               results = holistic.process(frame)  
               output = pose_estimation(frame,results)
+              output=cv2.resize(output,(width,height),interpolation=cv2.INTER_AREA)
               output =cv2.cvtColor(output,cv2.COLOR_BGR2RGB)
               out.write(output)
           for i in range(45-actualframe):
