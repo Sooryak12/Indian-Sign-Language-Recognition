@@ -9,3 +9,12 @@
 5. This can prove as a Game-Changer for deaf community people to interact with other people 
 6. First we are planning to extract key pose features points (body-positions ) and then we feed these videos in to Neural network architecture to find the spatial differences      between the frames, with that we think we can build an model to classify the signs to words .
 
+
+
+#### Giving input in command line:
+
+
+
+
+
+## Real Time output:
