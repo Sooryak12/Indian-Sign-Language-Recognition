@@ -12,7 +12,8 @@
 
 
 #### Giving input in command line:
-![Code_P3r6slKH0O](https://user-images.githubusercontent.com/55055042/147405152-35209cca-91a4-4423-929b-d6ccc58a7230.png)
+![Code_fdL4YuAKpe](https://user-images.githubusercontent.com/55055042/147405181-01bf2b71-9473-49d6-89ba-7b2d74665075.png)
+
 
 
 #### Real Time output:
