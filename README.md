@@ -12,9 +12,8 @@
 
 
 #### Giving input in command line:
+![Code_P3r6slKH0O](https://user-images.githubusercontent.com/55055042/147405152-35209cca-91a4-4423-929b-d6ccc58a7230.png)
 
 
-
-
-
-## Real Time output:
+#### Real Time output:
+![image](https://user-images.githubusercontent.com/55055042/147405159-1b5ae150-f42d-4605-aa3e-400df816ad6e.png)
