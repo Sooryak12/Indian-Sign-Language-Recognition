@@ -16,5 +16,3 @@
 
 
 
-#### Real Time output:
-![image](https://user-images.githubusercontent.com/55055042/147405159-1b5ae150-f42d-4605-aa3e-400df816ad6e.png)
