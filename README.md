@@ -10,7 +10,6 @@
 6. First we are planning to extract key pose features points (body-positions ) and then we feed these videos in to Neural network architecture to find the spatial differences      between the frames, with that we think we can build an model to classify the signs to words .
 
 
-
 #### Giving input in command line:
 ![Code_fdL4YuAKpe](https://user-images.githubusercontent.com/55055042/147405181-01bf2b71-9473-49d6-89ba-7b2d74665075.png)
 
