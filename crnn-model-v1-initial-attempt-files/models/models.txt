@@ -1,0 +1,3 @@
+Checkpoint Model : 16 Class Model from June
+
+model size is 360 mb , so not possible to upload in github. will upload in drive and share link.

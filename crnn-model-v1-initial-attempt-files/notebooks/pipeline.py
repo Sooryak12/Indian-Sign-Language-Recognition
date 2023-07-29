@@ -1,8 +1,8 @@
 import os
 import skvideo.io
 import cv2 
-import time
 import mediapipe as mp
+import numpy as np
 
 mp_drawing=mp.solutions.drawing_utils
 mp_holistic=mp.solutions.holistic

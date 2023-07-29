@@ -5,6 +5,7 @@ import skvideo.io
 import os
 import tensorflow as tf
 from notebooks.pipeline import video_array_maker
+import time
 
 
 #Loading model (path will change)
@@ -24,7 +25,7 @@ while(i<num_of_videos):
     width= int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     height= int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     out= cv2.VideoWriter('input.mp4', cv2.VideoWriter_fourcc(*'DIVX'),10, (width,height))
-    
+    start= time.time()
     while cap.isOpened():
         ret, frame = cap.read()
         if not ret:
