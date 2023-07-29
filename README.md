@@ -12,6 +12,10 @@ This project aims to bridge the communication gap for the deaf community by prov
 ### Output Words: [Hello, How are you, Thank you]
 
 
+## Project WorkFlow :
+![image](https://github.com/Sooryak12/ISL_Recognition/assets/55055042/d9312bf1-d615-4fc0-a2d3-edf3b4d08709)
+
+
 ## Installation and Usage
 
 1. Install Necessary Libraries: 
