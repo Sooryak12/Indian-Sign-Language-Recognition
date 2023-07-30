@@ -11,6 +11,7 @@ import time
 #Loading model (path will change)
 model=tf.keras.models.load_model(r"models\full_model")
 
+
 classes=['Loud','They','Sad','Quiet','He','Thank you','How are you','You','It','Good Afternoon','Hello','Alright','Beautiful','Happy','None','Good Morning']
 
 try:
@@ -21,6 +22,9 @@ except:
 num_of_videos=5
 i=0
 while(i<num_of_videos):
+    """ Loop which captures video frame from local camera , writes the frame in a video called "input.mp4 .
+        3 second video is captured and passed to video array maker which embeds the key coordinates in the video.
+        this video is then passed to CRNN model to predict word."""
     cap = cv2.VideoCapture(0)
     width= int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     height= int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -38,6 +42,7 @@ while(i<num_of_videos):
     out.release()      
     cv2.destroyAllWindows()
 
+    # Function which takes in input video , embeds points and returns an array where points are embedded in frames.
     outpath=video_array_maker("input.mp4",output_directory="out",output_folder="No",remove_input=False) 
 
     model_input=skvideo.io.vread(outpath)

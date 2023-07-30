@@ -8,6 +8,8 @@ mp_drawing=mp.solutions.drawing_utils
 mp_holistic=mp.solutions.holistic
 
 def pose_estimation(image,results):
+        """ Function which takes in image , and the result from mediapipe posenet and uses those cooridnates 
+        to mark coordinates in yellow color in frames"""
         
         # 1. Draw face landmarks
         #mp_drawing.draw_landmarks(image, results.face_landmarks, mp_holistic.FACE_CONNECTIONS, 
@@ -44,6 +46,10 @@ def video_array_maker(pather,height=224,width=224,output_directory="./Output",ou
     height,width (default : 224) 
     output_directory :output main directory  (default : ./Output)
     output folder :output subdirectory
+
+    the objective of this function is to take in video , choose evenly spaced 45 frames to keep the input shape same and not loose out information
+    apply posenet detection and embed coordinates in the frames and return an numpy array.
+
   """
   if output_folder is None:
     output_folder=pather.split("/")[3]
@@ -55,36 +61,36 @@ def video_array_maker(pather,height=224,width=224,output_directory="./Output",ou
   #start=time.time()
 
   with mp_holistic.Holistic(min_detection_confidence=0.5, min_tracking_confidence=0.5) as holistic:
-  #    arr=[]
+
     actualframe=len(videodata)
     #print("Actual frame {}".format(actualframe))
     if actualframe >=45:
           for i in range (actualframe):
-            x=round (actualframe/(45)  * i)
+            x=round (actualframe/(45)  * i)  # evenly chooses 45 frames from the frames in video
             if x >=actualframe:
                     break
             else:
                 frame =videodata[x]
-                #frame =cv2.resize(frame,(width,height),interpolation=cv2.INTER_AREA)
+
                 results = holistic.process(frame)  
 
-                output = pose_estimation(frame,results)
-                output =cv2.resize(output,(width,height),interpolation=cv2.INTER_AREA)
-                output =cv2.cvtColor(output,cv2.COLOR_BGR2RGB)
+                output = pose_estimation(frame,results)   # returns frame with key points embedded  in it.
+                output =cv2.resize(output,(width,height),interpolation=cv2.INTER_AREA)  #resize frame 
+                output =cv2.cvtColor(output,cv2.COLOR_BGR2RGB)  #convert BGR to RGB
                 #arr.append(output)
                 out.write(output)               
     else:
           for i in range(actualframe):
               frame=videodata[i]
-              #frame=cv2.resize(frame,(width,height),interpolation=cv2.INTER_AREA)
+
               results = holistic.process(frame)  
-              output = pose_estimation(frame,results)
-              output=cv2.resize(output,(width,height),interpolation=cv2.INTER_AREA)
-              output =cv2.cvtColor(output,cv2.COLOR_BGR2RGB)
+              output = pose_estimation(frame,results)    # returns frame with key points embedded  in it.
+              output=cv2.resize(output,(width,height),interpolation=cv2.INTER_AREA)  #resize frame
+              output =cv2.cvtColor(output,cv2.COLOR_BGR2RGB) #convert BGR to RGB
               out.write(output)
           for i in range(45-actualframe):
               
-              newframe=np.zeros(shape=(height,width,3))
+              newframe=np.zeros(shape=(height,width,3)) # if no. of frames <45 , add empty frames.
               
 
               out.write(np.uint8(newframe))

@@ -124,6 +124,14 @@ CRNN Time Distributed Model (V1) Categorical Accuracy:
 | 82%    | 42.4%  | 5%              |
 
 
+Model Size Comparision :
+
+ | CRNN Model (V1) | LSTM Model   | 
+| :-------- | :------- | 
+| 323mb (saved weights and structure)| 2.3mb (only weights)| 
+
+
+
 ## Screenshots 
 
 
