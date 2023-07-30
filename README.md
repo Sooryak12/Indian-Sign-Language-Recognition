@@ -76,6 +76,26 @@ Data Source:
 - Initially, we experimented with a CRNN model (V1) trained with 16 videos. Although the model showed considerable F1 score, it performed poorly in real-time and suffered from underfitting.
 - Later, we limited the classes and collected more data. The LSTM model was trained with 3 words: [Hello, How are you, Thank You], each containing 100 videos.
 
+#### Dataset Details :
+
+### Actions: [Hello, How are you, Thank you]
+Training Data : 
+ | Include Dataset Videos| Own Videos  | Number of Videos after augmentation                | Total Training Data |
+| :-------- | :------- | :------------------------- | :----------|
+| 25 videos per action | 60 Videos Per action | 340 Videos per action | 1020 Videos
+
+Validation  Data : 
+ | Include Dataset Videos| Own Videos  |  Total Validation  Data |
+| :-------- | :------- | :------------------------- |
+| 10 videos per action | 20 Videos Per action | 90 Videos  | 
+
+Real Time Test Data : 
+
+| Videos per action| Total   Data |
+| :-------- | :------- | 
+| 8 Videos  | 24 Videos  | 
+
+
 
 
 ## Input Shape
