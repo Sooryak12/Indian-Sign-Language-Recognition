@@ -78,7 +78,7 @@ Data Source:
 
 #### Dataset Details :
 
-### Actions: [Hello, How are you, Thank you]
+##### Actions: [Hello, How are you, Thank you]
 Training Data : 
  | Include Dataset Videos| Own Videos  | Number of Videos after augmentation                | Total Training Data |
 | :-------- | :------- | :------------------------- | :----------|
