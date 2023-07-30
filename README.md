@@ -5,8 +5,13 @@ This project aims to bridge the communication gap for the deaf community by prov
 
 
 #### Brief Explanation:
-- Video Level Sign Language Detection takes a video feed (ideally 2-3 seconds) as input and uses Mediapipe PoseNet to detect key body, left hand, and right hand points. For example, movements of the right thumb across frames can help identify specific signs.
-- A Numpy array of 45 frames (selected from the video) containing key coordinates is passed through an LSTM Deep Learning model to predict the word signified by the action in the video.
+- This project is aimed at developing a word-level Indian Sign Language (ISL) recognition system on Videos. Sign language is an action word which cannot be encompassed in a single frame, so a video of 2-3 seconds is required to determine the word signified by the action. The project's primary objective is to bridge the communication gap for the deaf community by enabling them to interact with non-sign language users effectively. The code sample provided here showcases the functionality of the system, demonstrating how it processes video input to recognize and predict the words signified by specific sign language actions.
+
+- The code begins by accepting a video feed, which can be obtained from various sources such as a camera, a saved video file, or a web application. From this feed, the system selects 45 frames evenly to ensure it doesn't lose information if number of frames is greater than 45 in videos. Using Mediapipe PoseNet, an advanced pose-estimation model, the code detects and captures key body, left hand, and right-hand coordinates present in each frame.For example, movements of the right thumb across frames can help identify specific signs.
+
+- These extracted coordinates are then saved as a Numpy array, preserving the spatial information of the key points. Shape: (45 frames, 22 coordinate information in x and y axis) Subsequently, the Numpy array is fed into an LSTM (Long Short-Term Memory) deep learning model. The LSTM model is crucial for processing sequential data and understanding the temporal dynamics of sign language gestures.
+
+- Finally, the LSTM model predicts the word corresponding to the sign language action in the video. This predicted word is the system's output, representing the meaningful interpretation of the sign language gesture
 
 
 ### Output Words: [Hello, How are you, Thank you]
