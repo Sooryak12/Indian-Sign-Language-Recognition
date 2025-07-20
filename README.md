@@ -139,7 +139,7 @@ LSTM Model performed significantly well both in validation set and exceptionally
 Categorical Accuracy  : 
  | Train | Validation   | Real-Time Test Data                |
 | :-------- | :------- | :------------------------- |
-| 78   % | 74.6 % | 75 %                     |
+| 78   % | 74.6 % | 84 %                     |
 
 
 CRNN Time Distributed Model (V1) Categorical Accuracy:
