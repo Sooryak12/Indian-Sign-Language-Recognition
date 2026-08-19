@@ -55,7 +55,10 @@ while(i<num_of_videos):
         if not ret:
            break 
         out.write(frame) # saves frame in file
-        if time.time() - start >5:  # 5 second video to capture the action
+        cv2.imshow('Live ISL Tracking', frame)
+        cv2.waitKey(1)
+        
+        if time.time() - start > 5:  # 5 second video to capture the action
             break     
 
     cap.release()        
