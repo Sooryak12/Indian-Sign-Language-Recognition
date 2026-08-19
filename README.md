@@ -185,6 +185,7 @@ Model Size Comparision :
 
 ---
 ## 🛠️ 2026 Bug Fixes & Updates
+This fork focuses on bringing the original project up to date for modern Windows/Python environments and fixing runtime issues encountered during deployment.
 This fork includes essential fixes to run the legacy model on modern Windows environments:
 
 * **OpenCV Circular Import Fix:** The original `opencv-python==4.5.2.52` causes a known circular import crash (`gapi_wip_gst_GStreamerPipeline`) on newer Python versions. It is highly recommended to bump this to `4.6.0.66` or higher.
