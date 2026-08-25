@@ -85,7 +85,7 @@ def convert_video_to_pose_embedded_np_array(pather,remove_input=False):
                   frame=videodata[i]
                   image,results = mediapipe_detection(frame,holistic) #applying mediapipe model
                   keypoints = extract_keypoints(results) #concatanates body , left hand , right hand points.
-                  key_points_shape = keypoints.shape()  # save as a single numpy array
+                  key_points_shape = keypoints.shape  # save as a single numpy array
                   np_array.append(keypoints)
         
               for i in range(45-actualframe):

@@ -183,3 +183,14 @@ Model Size Comparision :
 
 
 
+---
+## 🛠️ 2026 Bug Fixes & Updates
+This fork focuses on bringing the original project up to date for modern Windows/Python environments and fixing runtime issues encountered during deployment.
+This fork includes essential fixes to run the legacy model on modern Windows environments:
+
+Live Webcam Display: The original deployment script processed the webcam feed in the background without displaying a live camera window. Added cv2.imshow() and cv2.waitKey() to deploy-code.py so the camera feed and recognition output can be viewed in real time.
+
+
+* **OpenCV Circular Import Fix:** The original `opencv-python==4.5.2.52` causes a known circular import crash (`gapi_wip_gst_GStreamerPipeline`) on newer Python versions. It is highly recommended to bump this to `4.6.0.66` or higher.
+* **Syntax Fix in helper_functions.py:** Fixed a crash occurring when videos had fewer than 45 frames. The code incorrectly called `keypoints.shape()` as a function, which has been corrected to the proper NumPy attribute `keypoints.shape`.
+* **Live Display Added:** Added `cv2.imshow()` and `cv2.waitKey()` to `deploy-code.py` so the webcam window actually renders live on the screen instead of recording silently in the background.
